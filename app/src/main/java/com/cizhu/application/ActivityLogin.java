@@ -546,7 +546,7 @@ public class ActivityLogin extends AppCompatActivity
 
     private void gotoMainActivity(int debug)
     {
-        //跳转
+        //跳转123
         Intent intent = new Intent();
         if(debug==1) intent.setClass(ActivityLogin.this, ActivityMain2.class);
         else if(debug==2) intent.setClass(ActivityLogin.this, ActivityMain2.class);
