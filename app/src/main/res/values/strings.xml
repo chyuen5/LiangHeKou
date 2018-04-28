@@ -1,0 +1,355 @@
+<resources>
+    <string name="app_name">长江信管</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="connect_adminer">联系管理员</string>
+    <string name="request_connect_adminer">请联系管理员并提供IMEI码</string>
+
+    <string name="refer_imei_code">IMEI:</string>
+    <string name="connect_phone_number">联系电话:</string>
+    <string name="call_phone_call">26186914</string>
+    <string name="reconnect_warning_text">当前网络不稳定,正在重新连接中...</string>
+
+    <!-- 通用 -->
+    <string name="common_cancel">取消</string>
+    <string name="common_confirm">确定</string>
+
+    <string name="connect_phone_call">拨打</string>
+    <string name="connect_phone_cancel">取消</string>
+
+    <!-- 视频页 -->
+    <string name="tab_video_activity_titlebar_title">视频</string>
+    <string name="tab_video_activity_novideo">暂无视频</string>
+    <string name="tab_video_activity_talk_hint">按住对讲，松开结束</string>
+    <string name="tab_video_activity_resolution_title">画质选择</string>
+    <string name="tab_video_activity_resolution_HD">高清画质</string>
+    <string name="tab_video_activity_resolution_SD">标清画质</string>
+    <string name="tab_video_activity_resolution_LD">流畅画质</string>
+    <string name="tab_video_activity_playback_title">回放选择</string>
+    <string name="tab_video_activity_playback_local">本地回放</string>
+    <string name="tab_video_activity_playback_remote">远程回放</string>
+    <string name="tab_video_activity_screenshot_title">自定义截图名称</string>
+    <string name="tab_video_activity_screenshot_subtitle">选择跳过，将按时间存为默认名称</string>
+    <string name="tab_video_activity_screenshot_ignore">跳过</string>
+    <string name="tab_video_activity_screenshot_confirm">确定</string>
+    <string name="tab_video_activity_screenshot_hint">请输入自定义名称</string>
+    <string name="autoCompleteTextView_hint">搜索或输入地址</string>
+    <string name="tab_video_activity_recordvideo_title">自定义录像名称</string>
+    <string name="tab_video_activity_yuntai_zoom">变倍</string>
+    <string name="tab_video_activity_yuntai_aperture">光圈</string>
+    <string name="tab_video_activity_yuntai_focus">焦距</string>
+    <string name="tab_video_activity_flip_title">翻转选择</string>
+    <string name="tab_video_activity_flip_horizontal">水平翻转</string>
+    <string name="tab_video_activity_flip_vertical">垂直翻转</string>
+
+    <!-- 消息页 -->
+    <string name="tab_message_activity_titlebar_title">消息</string>
+
+    <!-- 设备页 -->
+    <string name="tab_device_activity_titlebar_title">设备</string>
+    <string name="tab_device_activity_nodevice">暂无设备,请添加新设备</string>
+
+    <!-- 本地回放页 -->
+    <string name="PlayBackLocalActivity_titlebar_title">本地回放</string>
+
+    <!-- 查看截图页 -->
+    <string name="lookpic_activity_titlebar_title">查看截图</string>
+    <string name="lookpic_activity_choose_item">请选择项目</string>
+
+    <!-- 更多页 -->
+    <string name="tab_more_activity_titlebar_title">更多</string>
+    <string name="loading_activity_company_info">拾联科技 ©2015.Wholeally</string>
+    <string name="loading_activity_app_info">远程实时视频管理系统</string>
+    <string name="loading_activity_app_info_police">云县交警远程音视频管理系统</string>
+    <string name="welcome_activity_away_tiyan">立即体验</string>
+    <string name="comment_back">返回</string>
+    <string name="login_activity_username">用户名</string>
+    <string name="login_activity_password">密码</string>
+    <string name="login_activity_login">登录</string>
+    <string name="login_activity_login_load">登录中</string>
+    <string name="login_activity_text_no_account">还没有账号,</string>
+    <string name="login_activity_text_tianjin_account">还没有账号,请联系管理员</string>
+    <string name="login_activity_please_register">请注册</string>
+    <string name="login_activity_zhibo_qudao">直播通道</string>
+    <string name="login_activity_global_show">全球示范点</string>
+    <string name="login_zefire_text">厦门泽火数字科技有限公司</string>
+    <string name="register_activity_register">注册</string>
+    <string name="register_activity_getNewCode">绑定新手机</string>
+    <string name="register_activity_inputcountry">请确认你的国家和地区并输入手机号</string>
+    <string name="register_activity_area">国家和地区</string>
+    <string name="register_activity_verification_code">验证码</string>
+    <string name="register_activity_inputverifcode">请填写验证码</string>
+    <string name="register_activity_verification">验证</string>
+    <string name="manual_add_device_activity_confirm">确认</string>
+    <string name="register_activity_add">+</string>
+    <string name="register_activity_quhao">86</string>
+    <string name="register_activity_get_code">获取验证码</string>
+    <string name="register_activity_input_telephone">请填写手机号</string>
+    <string name="register_activity_already_read">我已阅读并同意</string>
+    <string name="register_activity_read_xieyi">《注册服务协议》</string>
+    <string name="register_activity_already_reads">我已阅读并同意注册服务协议</string>
+    <string name="register_activity_account">账号</string>
+    <string name="register_activity_nick">昵称</string>
+    <string name="register_activity_tiaojian">字母开头，5&#8211;20位数字、英文或下划线</string>
+    <string name="register_activity_input_account">请输入账号</string>
+    <string name="register_activity_password">密码</string>
+    <string name="register_activity_send_success">验证码发送成功,请注意查收</string>
+    <string name="register_activity_send_fail">验证码发送失败</string>
+    <string name="register_activity_verify_success">验证成功</string>
+    <string name="register_activity_verify_fail">验证失败</string>
+    <string name="register_activity_success">注册成功</string>
+    <string name="register_activity_fail">注册失败</string>
+    <string name="register_activity_password_tiaojian">6&#8211;16位数字、英文或下划线</string>
+    <string name="register_activity_input_password">请输入密码</string>
+    <string name="register_activity_confirm_password">确认密码</string>
+    <string name="register_activity_again_password">请确认密码</string>
+    <string name="register_activity_device_name">设备名称</string>
+    <string name="register_activity_input_device_name">请输入设备名称</string>
+    <string name="register_activity_telephone">手机号码</string>
+    <string name="register_activity_input_info">请填写以下信息完成你的注册</string>
+    <string name="register_activity_register_xieyi">用户注册协议</string>
+    <string name="register_activity_agree">同意</string>
+    <string name="register_activity_agree_finish">完成</string>
+    <string name="register_activity_text">思维眼观看端软件用户注册服务协议</string>
+    <string name="register_activity_content">重要须知:\n请认真阅读和理解拾联科技最终用户许可协议的内容及限制，除非您完全接受本协议的条款，否则请勿在您的手机上安装思维眼软件。\n\n1.总则\n最终用户软件许可协议 (以下简称“许可协议”) 是您和拾联（厦门）信息科技有限公司（以下简称“拾联科技”）之间的具有法律约束力的协议。在您接受本许可协议约束的前提下，本许可协议允许您使用拾联科技 (网址：www.wholeally.com ) 所提供的软件 (以下简称“软件”) 。\n\n2.协议\n2.1 拾联科技在此授予您有限的、个人的、非排他性的许可：\n2.1.1 以可执行于您所拥有的、租赁和/或控制的一台电脑/手机上的目标代码的方式使用该软件，仅限用于开发拾联科技产品的应用软件；\n2.1.2 仅为了备份、存档和将程序置于适宜执行形式的，您可以复制程序。所有经允许的复制件，都要清楚地标上与原先供给您的程序相同的、关于拾联科技所有权和版权的限制说明。\n2.2 本许可协议未予明示的所有权益均归拾联科技所有，您同意不对该软件进行或允许他人进行任何未经明确授权的行为。为避免产生疑问，除了本许可协议有明文规定外，您无权对该软件及其修订版、改写版及复制版本之全部或一部分进行使用、纳入其他产品、复制、修改、翻译或将其转让给第三方，同时，您亦无权对其全部或部分进行反编译、反向工程或对二进制代码进行反汇编。\n2.3 本软件只对您授权。未经拾联科技事先书面同意，您不得出售、转让、许可、转移或以其他方式向第三方提供软件。\n\n3.知识产权\n3.1 您唯一可使用本软件的权利是藉于本许可协议以及您承认本软件的知识产权或与本软件有关其它知识产权以及软件的所有部分是且将继续是专属于拾联科技或其授权方所有。\n3.2 您进一步承认，由于您使用本软件而直接或间接产生的该软件的任何改进、修改或调整所产生的或相关的知识产权均专属于并将应始终专属于拾联科技所有。\n3.3 您同意不会删除或更改任何版权标识或类似设置，包括但不限于纳入该软件或该软件的任何副本里的任何电子水印或其他识别标志。\n\n4.保密条款\n4.1 该软件的结构、组织和源代码是拾联科技和其授权方宝贵的商业秘密和享有所有权的保密信息。您同意不提供或不透露本软件包含的或由本软件所导出的任何该等保密信息给任何第三方。\n4.2 以下信息不适用上述4.1条款：\n4.2.1 合法获得的免于任何保密义务的信息(非直接地或间接地从拾联科技获得);\n4.2.2 在您可以出示书面证明的条件下，您已事先拥有的信息 (由于违背本条款4之规定的除外); \n4.2.3 有书面证据可以证明属于公有领域的信息(由于违背本条款4规定的除外)。\n4.3 根据法定义务或法院命令，在相关信息合理必要的披露要求限度内，您已恰当合理的采取通知和保密措施情况下，披露行为将不被视为违反本条内容。</string>
+    <string name="more_activity_account_manager">账号管理</string>
+    <string name="more_activity_wifi_setting">wifi设置</string>
+    <string name="more_activity_data_tongji">数据流量统计</string>
+    <string name="more_activity_help">帮助</string>
+    <string name="more_activity_feedback">意见反馈</string>
+    <string name="more_activity_about_we">关于我们</string>
+    <string name="more_activity_update">检查更新</string>
+    <string name="more_activity_exit">退出</string>
+    <string name="account_manager_activity_head">头像</string>
+    <string name="account_manager_activity_accountype">账号类型</string>
+    <string name="account_manager_activity_name">真实姓名</string>
+    <string name="account_manager_activity_mail">邮箱</string>
+    <string name="account_manager_activity_phone">手机号</string>
+    <string name="account_manager_activity_updatepassword">修改密码</string>
+    <string name="update_password_activity_old">旧密码</string>
+    <string name="update_password_activity_new">新密码</string>
+    <string name="update_password_activity_inputold">请输入旧密码</string>
+    <string name="update_password_activity_inputnew">请输入新密码</string>
+    <string name="update_password_activity_againpassword">请再次输入密码</string>
+    <string name="update_password_activity_confirm">确认</string>
+    <string name="nickname_mail_activity_updatenick">修改昵称</string>
+    <string name="nickname_mail_activity_nickcondition">请输入1&#8211;20位数字、字母或汉字</string>
+    <string name="nickname_mail_activity_updatename">修改姓名</string>
+    <string name="nickname_mail_activity_namecondition">请输入1&#8211;10位字母或汉字</string>
+    <string name="nickname_mail_activity_updatemail">修改邮箱</string>
+    <string name="nickname_mail_activity_mailcondition">请输入1&#8211;50位邮箱地址</string>
+    <string name="wifi_activity_title">WIFI设置</string>
+    <string name="wifi_activity_net">2G/3G/4G</string>
+    <string name="wifi_activity_daytraffic">今日流量</string>
+    <string name="wifi_activity_monthtraffic">本月流量</string>
+    <string name="wifi_activity_historycounttraffic">历史总流量</string>
+    <string name="wifi_activity_cleardata">清空数据</string>
+    <string name="wifi_activity_trafficount">流量统计</string>
+    <string name="wifi_activity_activation">激活</string>
+    <string name="wifi_activity_noactivation">未激活</string>
+    <string name="wifi_activity_netlink">WIFI网络连接</string>
+    <string name="wifi_activity_netname">网络名称</string>
+    <string name="wifi_activity_wifilink">连接</string>
+    <string name="wifi_activity_wifilist">点击图标显示wifi列表</string>
+    <string name="wifi_activity_wifipass">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;请输入密码</string>
+    <string name="help_activity_help">帮助</string>
+    <string name="help_activity_deviceuse">设备使用帮助</string>
+    <string name="help_activity_appuse">应用使用帮助</string>
+    <string name="feedback_activity_submit">提交</string>
+    <string name="feedback_activity_feedback">意见反馈</string>
+    <string name="feedback_activity_edit">请给出您的意见</string>
+
+    <!-- 一些通用的显示信息 -->
+    <string name="toast_channel_offline">当前通道不在线，无法观看</string>
+    <string name="toast_not_authority_yuntai">当前账号无云台操作权限</string>
+    <string name="toast_not_authority_talk">当前账号无对讲权限</string>
+    <string name="title_activity_video_control">VideoControlActivity</string>
+    <string name="hello_world">千眼一登录</string>
+    <string name="about_we_activity_contents">&#160;&#160;&#160;&#160;&#160;&#160;拾联(厦门)信息科技有限公司专注于VSSAAS远程视频监控服务云平台的研发,平台采用跨区域、大集中、分层级的架构体系,打造中断层面、网络层面、平台层面、应用层面交互层面的深度技术和业务融合。同时,具备了集成各种智能分析工具及"高视频压缩技术、低流量信息传输"的绝对优势,并通过与传统及移动互联网应用的融合,为客户提供全方位的"远程视频科技"为核心的信息化应用管理解决方案。&#x000D;&#x000D;</string>
+    <string name="about_we_zehuo_contents">&#160;&#160;&#160;&#160;&#160;&#160;厦门泽火数字科技有限公司致力于互联网技术及物联网技术在农业产业链中的运用。解决食品安全问题,建立公平贸易体系,建立人与人之间的信任关系是我们的初心。目前开发产品包括：食品安全可追溯平台,农业产业链可视化追溯平台,设施农业智能监管控制平台。基于我们架构的云平台,可以实现跨平台,多终端应用,兼容Windows,IOS,Android 操作系统,手机,平板,PC均可操作。&#x000D;&#x000D;</string>
+
+    <string name="about_we_activity_text">客服电话:</string>
+    <string name="about_we_activity_phone">&#160;4001&#8211;566&#8211;177&#x000D;&#x000D;</string>
+
+    <string name="about_we_activity_phone_zehuo">&#160;6665566&#8211;0592&#x000D;&#x000D;</string>
+
+    <string name="about_we_activity_phone_zehuoTwo">18950181028</string>
+
+    <string name="about_we_activity_qq">QQ:&#160;2720947253&#160;&#160;&#160;&#160;2209961552&#x000D;&#x000D;</string>
+
+    <string name="about_we_activity_qq_zehuo">QQ:&#160;18950181028</string>
+
+    <string name="about_we_activity_webtext">公司网址:</string>
+    <string name="about_we_activity_weblink">http://www.wholeally.com&#x000D;&#x000D;</string>
+
+    <string name="about_we_activity_weblink_zehuo">www.zehuo.cc&#x000D;&#x000D;</string>
+
+    <string name="about_we_activity_address">公司地址:福建省厦门市思明区软件园2期观日路26号之四,504之二</string>
+
+    <string name="about_we_activity_address_zehuo">公司地址:厦门市湖里区万达广场写字楼C2座1502漳州分公司地址:漳州市芗城区佰马城3F悦农庄</string>
+
+    <string name="tab_device_activity_online">在线</string>
+    <string name="tab_device_activity_offline">离线</string>
+    <string name="tab_device_detail_activity_devicedetail">设备详情</string>
+    <string name="tab_device_detail_activity_imageset">图像设置</string>
+    <string name="tab_device_detail_activity_videoset">录像设置</string>
+    <string name="tab_device_detail_activity_voiceset">声音设置</string>
+    <string name="tab_device_detail_activity_wifinet">WIFI网络</string>
+    <string name="tab_device_detail_activity_savestatus">存储状态</string>
+    <string name="tab_device_detail_activity_deviceversion">设备版本</string>
+    <string name="tab_device_detail_activity_onlinetime">在线时长</string>
+    <string name="tab_device_detail_activity_offlinenotice">下线通知</string>
+    <string name="tab_device_detail_activity_systemset">系统设置</string>
+    <string name="update_device_name_activity_name">修改设备名称</string>
+    <string name="update_device_name_activity_newname">请填写新的设备名称</string>
+    <string name="update_device_name_activity_tiaojian">1&#8211;8位数字、英文或汉字</string>
+    <string name="image_set_activity_title">图像设置</string>
+    <string name="image_set_activity_timestemp">是否显示时间戳</string>
+    <string name="image_set_activity_camername">是否显示摄像机名称</string>
+    <string name="image_set_activity_autolight">是否自动补光</string>
+    <string name="image_set_activity_policeinfo">开启后,当物体挡住镜头时,将有报警信息提示</string>
+    <string name="video_set_activity_videoset">录像设置</string>
+    <string name="video_set_activity_videoway">录像方式</string>
+    <string name="video_set_activity_manualvideo">手动录像</string>
+    <string name="video_set_activity_entirevideo">全程录像</string>
+    <string name="video_set_activity_package_interval">打包间隔</string>
+    <string name="video_set_activity_storage_policy">存储策略</string>
+    <string name="video_set_activity_ifcover">是否覆盖</string>
+    <string name="voice_set_activity_voiceset">声音设置</string>
+    <string name="voice_set_activity_collectvoice">采集声音</string>
+    <string name="voice_set_activity_playvoice">播放声音</string>
+    <string name="wifi_net_activity_netinfo">当前WIFI网络信息</string>
+    <string name="wifi_net_activity_net">网络</string>
+    <string name="wifi_net_activity_inputnetname">请输入网络名称</string>
+    <string name="wifi_net_activity_wifipass">请输入密码</string>
+    <string name="storage_status_activity_storage">存储状态</string>
+    <string name="storage_status_activity_storage_cloud">云存储(暂未启用)</string>
+    <string name="storage_status_activity_nostorage">未存储</string>
+    <string name="storage_status_activity_storagecard">存储卡</string>
+    <string name="system_set_activity_systemset">系统设置</string>
+    <string name="system_set_activity_restoreset">恢复出厂设置</string>
+    <string name="system_set_activity_restartdevice">重启设备</string>
+    <string name="dialog_version_update">版本更新</string>
+    <string name="dialog_version_update_next">以后再说</string>
+    <string name="dialog_version_update_awayupdate">立即更新</string>
+    <string name="add_device_way_dialog_way">添加方式</string>
+    <string name="add_device_way_dialog_saomiao">扫描添加</string>
+    <string name="add_device_way_dialog_manual">手动添加</string>
+    <string name="add_device_way_dialog_cancel">取消</string>
+    <string name="add_device_way_dialog_sure">确定</string>
+    <string name="add_device_way_dialog_queren">确认</string>
+    <string name="update_head_dialog_headname">修改头像</string>
+    <string name="update_head_dialog_takephoto">拍照</string>
+    <string name="update_head_dialog_photochoose">从相册中选择</string>
+    <string name="update_head_dialog_localphoto">本地相册</string>
+    <string name="update_head_dialog_photoselect">相册选择</string>
+    <string name="update_head_dialog_sysphoto">系统相册</string>
+    <string name="text_error_info_dialog">输入信息有误</string>
+    <string name="text_error_info_dialogs">请重新填写您的账号信息</string>
+    <string name="manual_add_device_activity_title">添加设备</string>
+    <string name="manual_add_device_activity_longitude">经度</string>
+    <string name="manual_add_device_activity_latitude">纬度</string>
+    <string name="manual_add_device_activity_add">添加</string>
+    <string name="manual_add_device_activity_deviceid">设备ID</string>
+    <string name="manual_add_device_activity_inputid">请输入设备ID</string>
+    <string name="storage_info_activity_titlename">存储卡信息</string>
+    <string name="storage_info_activity_storagesize">存储卡容量</string>
+    <string name="storage_info_activity_warning">存储预警</string>
+    <string name="storage_info_activity_warnconcondition">存储预警指当使用量到达指定的范围,用户可收到一条预警信息</string>
+    <string name="storage_info_activity_format">格式化</string>
+    <string name="storage_info_activity_lookcontent">查看内容</string>
+    <string name="storage_info_activity_monitore_tag">TF></string>
+    <string name="fragment_message_event_alreadyread">全部标记为已读</string>
+    <string name="fragment_message_event_messagesource">消息来源:</string>
+    <string name="fragment_message_event_messagetype">消息类型:</string>
+    <string name="fragment_message_event_messagevideo"> 消息录像</string>
+    <string name="fragment_message_event_scenevideo"> 现场视频</string>
+    <string name="resend_sms_code">%d秒&#8230;&#8230;&#8230;</string>
+    <string name="resend_sms_code_2">重新发送验证码</string>
+    <string name="title_activity_play_back_local">PlayBackLocalActivity</string>
+    <string name="select_country_activity_choose">请选择国家和地区</string>
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">加载中&#8230;&#8230;&#8230;</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="netState">网络状态</string>
+    <string name="setNetwork">当前网络不可用，是否设置网络</string>
+    <string name="setting">设置</string>
+    <string name="network_is_unavailable">网络连接不可用</string>
+    <string name="more_activity_data_map">电子地图</string>
+    <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+
+
+    <!-- SmartLink页面 -->
+    <string name="wholeally_title_smartlink">wifi配置</string>
+    <string name="wholeally_auth_mode">权限模式</string>
+    <string name="wholeally_wifi_net">wifi网络</string>
+    <string name="wholeally_custom_define">自定义</string>
+    <string name="wholeally_password_wifi">密码</string>
+    <string name="wholeally_please_input_wifi_pass">请输入当前wifi网络密码</string>
+    <string name="wholeally_wifi_connect">连接</string>
+    <string name="wholeally_wifi_already_connect">已连接</string>
+    <string name="wholeally_stop_connect">停止</string>
+
+
+    <string name="cancel">取消</string>
+    <string name="download_title">软件版本更新</string>
+    <string name="later">以后再说</string>
+    <string name="download">立即更新</string>
+    <string name="update_message">有最新的软件包哦，亲快下载吧~</string>
+    <string name="update_title">思维眼 企业版2.0.0</string>
+    <string name="update_desc">1.添加域名对应ip的缓存策略\n2.修复通道无信号，无法切换的问题\n3.添加控制中心断开自动重连的处理\n4.修复监控点树的缓存问题\n</string>
+
+    <string name="pull_to_refresh_tap_label">点击刷新</string>
+    <string name="pull_to_refresh_pull_label">下拉刷新</string>
+    <string name="pull_to_refresh_release_label">松开后刷新</string>
+    <string name="pull_to_refresh_refreshing_label">正在刷新</string>
+
+    <string name="protection_text_now">布防中</string>
+
+    <string name="cancel_">取消</string>
+
+    <string name="tv_ipc">为思维盒各路手动选择配置搜索到的IPC</string>
+
+    <string name="tv_all_bind">一键绑定</string>
+
+    <string name="tv_all_unbind">一键解绑</string>
+
+    <string name="_resolution">标清</string>
+
+    <string name="textview_device_type">设备类型</string>
+
+    <string name="select_device_type">请选择类型</string>
+
+    <string name="load_more">加载更多</string>
+
+
+    <string name="please_first_login_get_auth">点击登录,获取授权,自会显示</string>
+    <string name="please_input_server_ip">例如:172.168.0.134</string>
+    <string name="please_input_server_port">例如:18081</string>
+    <string name="jiankong_platform_address">wholeally.net:18081/monitor-platform/</string>
+
+    <string name="hint_edit_ip_port">例如:192.168.0.45:18081/</string>
+    <string name="hint_edit_ip_server">例如:192.168.0.45</string>
+
+    <string name="update_new_pwd">请输入至少6位新密码</string>
+    <string name="login_forget_pwd">忘记密码？</string>
+    <string name="login_fail">无法登陆</string>
+    <string name="login_globle_icon">全球演示点图标</string>
+    <string name="getcode_phone_num">手机号</string>
+    <string name="getcode_account">账&#160;&#160;&#160;&#160;号</string>
+
+    <string name="getcode_no_correct">验证码不正确，请重新输入！</string>
+    <string name="reset_pwd_text">请设置6&#8211;20位新密码</string>
+    <string name="reset_success_tv1">你好，新密码已设置成功</string>
+    <string name="reset_seccess_second">3</string>
+    <string name="reset_sucess_tv2">秒后，将自动跳到登陆界面</string>
+    <string name="remeber_pwd">记住密码</string>
+
+</resources>

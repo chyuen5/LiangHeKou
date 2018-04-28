@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray_two"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView_VideoControlActivity_resolution_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:text="@string/tab_video_activity_resolution_title"
+            android:textColor="@color/blue_common"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView_VideoControlActivity_resolution_dividing_line_1"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@color/blue_common" />
+
+        <ListView 
+            android:id="@+id/resolution_listview"
+			android:layout_width="fill_parent"
+            android:layout_height="wrap_content"           
+            >
+        </ListView>
+        
+        <TextView
+            android:id="@+id/textView_VideoControlActivity_resolution_HD"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_bg_dialog"
+            android:clickable="true"
+            android:paddingBottom="15dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:text="@string/tab_video_activity_resolution_HD"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:visibility="gone"
+             />
+
+        <TextView
+            android:id="@+id/textView_VideoControlActivity_resolution_dividing_line_2"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_line" 
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/textView_VideoControlActivity_resolution_SD"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_bg_dialog"
+            android:clickable="true"
+            android:paddingBottom="15dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:text="@string/tab_video_activity_resolution_SD"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView_VideoControlActivity_resolution_dividing_line_3"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_line" 
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/textView_VideoControlActivity_resolution_LD"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_bg_dialog"
+            android:clickable="true"
+            android:paddingBottom="15dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:text="@string/tab_video_activity_resolution_LD"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView_VideoControlActivity_resolution_dividing_line_4"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_line" />
+
+        <TextView
+            android:id="@+id/textView_VideoControlActivity_resolution_cancel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_bg_dialog"
+            android:clickable="true"
+            android:gravity="center"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:text="@string/common_cancel"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</RelativeLayout>

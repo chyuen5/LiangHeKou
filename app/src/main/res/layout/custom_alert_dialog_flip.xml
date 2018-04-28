@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout_flip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray_two"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView_VideoControlActivity_flip_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:text="@string/tab_video_activity_flip_title"
+            android:textColor="@color/blue_common"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView_VideoControlActivity_flip_dividing_line_1"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@color/blue_common" />
+        
+        <CheckBox
+            android:id="@+id/checkBox_VideoControlActivity_flip_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_video_activity_flip_horizontal"
+            android:button="@drawable/selector_check_box_flip"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="18sp"
+            android:textColor="@color/black" />
+
+
+        <TextView
+            android:id="@+id/textView_VideoControlActivity_flip_dividing_line_2"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_line" />
+
+        <CheckBox
+            android:id="@+id/checkBox_VideoControlActivity_flip_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_video_activity_flip_vertical"
+            android:button="@drawable/selector_check_box_flip"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="18sp"
+            android:textColor="@color/black" />
+        
+        <TextView
+            android:id="@+id/textView_VideoControlActivity_flip_dividing_line_3"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_line" />
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+
+            <Button
+                android:id="@+id/button_custom_alert_dialog_flip_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/common_cancel"
+                android:background="@drawable/selector_bg_dialog"
+                android:padding="15dp"
+                android:textSize="18sp"
+                android:textColor="@color/black" />
+            
+            <TextView
+                android:id="@+id/textView_custom_alert_dialog_flip_dividing_line_4"
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:background="@color/gray_line" />
+
+            <Button
+                android:id="@+id/button_custom_alert_dialog_flip_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/common_confirm"
+                android:background="@drawable/selector_bg_dialog"
+                android:padding="15dp"
+                android:textSize="18sp"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
