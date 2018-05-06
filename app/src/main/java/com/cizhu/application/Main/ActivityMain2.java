@@ -257,7 +257,7 @@ public class ActivityMain2 extends Activity implements OnClickListener
                 }
                 else if( position==5 )
                 {
-                    url = appUrl+"/xs/bimuseforgeAction.do?goBimView&bdid="+userId;
+                    url = appUrl+"/xs/bimuseforgeAction.do?goBimView&bdid=59ff50d2-6e6b-4205-af18-31714bab205a";
                     Intent intent = new Intent();
                     intent.setClass(ActivityMain2.this, WebViewCanteen.class);
                     intent.putExtra("webUrl",url);
