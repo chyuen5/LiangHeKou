@@ -391,6 +391,7 @@ public class ActivityLogin extends AppCompatActivity
             String versionos = "";
             String roles = "";
             String realname = "";
+            String userid = "";
 
             JSONObject jsonObj;
 
@@ -461,6 +462,8 @@ public class ActivityLogin extends AppCompatActivity
                 //获取角色
                 roles = jsonObj.getString("roleCode");
 
+                userid = jsonObj.getString("id");
+
                 android.util.Log.i("cjwsjy", "--------roles="+roles+"-------onBackPressed");
 
                 //保存
@@ -469,6 +472,7 @@ public class ActivityLogin extends AppCompatActivity
                 editor.putString("USERDATA.LOGIN.PASSWORD", password);
                 editor.putString("USERDATA.DISPLAY.NAME", realname);
                 editor.putString("USERDATA.ROLE.CODE", roles);
+                editor.putString("USERDATA.USER.ID", userid);
                 editor.commit();
 
                 //登录成功

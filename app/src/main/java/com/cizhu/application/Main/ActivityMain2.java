@@ -184,15 +184,25 @@ public class ActivityMain2 extends Activity implements OnClickListener
         listItem2.setTv_title("评定管理");
         listItems.add(listItem2);
 
+        FinishPeddingItem listItem3 = new FinishPeddingItem();
+        listItem3.setIv_icon1(R.drawable.home_dangan12);
+        listItem3.setTv_title("进度管理");
+        listItems.add(listItem3);
+
+        FinishPeddingItem listItem4 = new FinishPeddingItem();
+        listItem4.setIv_icon1(R.drawable.home_dangan24);
+        listItem4.setTv_title("台账查询");
+        listItems.add(listItem4);
+
         FinishPeddingItem listItem5 = new FinishPeddingItem();
-        listItem5.setIv_icon1(R.drawable.home_dangan12);
-        listItem5.setTv_title("进度管理");
+        listItem5.setIv_icon1(R.drawable.home_dangan24);
+        listItem5.setTv_title("安全管理");
         listItems.add(listItem5);
 
-        FinishPeddingItem listItem3 = new FinishPeddingItem();
-        listItem3.setIv_icon1(R.drawable.home_dangan24);
-        listItem3.setTv_title("台账查询");
-        listItems.add(listItem3);
+        FinishPeddingItem listItem6 = new FinishPeddingItem();
+        listItem6.setIv_icon1(R.drawable.home_dangan24);
+        listItem6.setTv_title("BIM模型");
+        listItems.add(listItem6);
 
         // 生成适配器的Item和动态数组对应的元素
         listItemAdapter = new AdaperItem3( ActivityMain2.this, listItems );
@@ -234,6 +244,24 @@ public class ActivityMain2 extends Activity implements OnClickListener
                     intent.setClass(ActivityMain2.this, WebViewCanteen.class);
                     intent.putExtra("webUrl",url);
                     intent.putExtra("titleName","台账查询");
+                    startActivity(intent);
+                }
+                else if( position==4 )
+                {
+                    url=""+appUrl+"/LHKAppServer/webSchedule/getPingDingQuery/"+m_loginname;
+                    Intent intent = new Intent();
+                    intent.setClass(ActivityMain2.this, Activity_AnQuan.class);
+                    intent.putExtra("webUrl",url);
+                    intent.putExtra("titleName","安全管理");
+                    startActivity(intent);
+                }
+                else if( position==5 )
+                {
+                    url = appUrl+"/xs/bimuseforgeAction.do?goBimView&bdid="+userId;
+                    Intent intent = new Intent();
+                    intent.setClass(ActivityMain2.this, WebViewCanteen.class);
+                    intent.putExtra("webUrl",url);
+                    intent.putExtra("titleName","BIM模型");
                     startActivity(intent);
                 }
             }

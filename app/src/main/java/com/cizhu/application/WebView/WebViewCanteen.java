@@ -1077,6 +1077,7 @@ public class WebViewCanteen extends AppCompatActivity {
 	@Override
 	public void onBackPressed()
 	{
+		int len = 0;
 		String urlstr = mWebView.getUrl();
 		String buff;
 
@@ -1085,7 +1086,9 @@ public class WebViewCanteen extends AppCompatActivity {
 		m_imagev_back.setEnabled(true);
         //layout.setVisibility(View.VISIBLE);
 
-		buff = urlstr.substring(0,70);
+		len = urlstr.length();
+		if( len>70 ) buff = urlstr.substring(0,70);
+		else buff = "1";
         //消缺统计 弹出确认框
 //		if( urlstr.contains("/getBasicSituation/") )
 //		{
