@@ -38,14 +38,14 @@ public class App extends Application
             {
                 //注册成功会返回device token
                 m_str_deviceToken = deviceToken;
-                android.util.Log.i("cjwsjy", "--------deviceToken1="+deviceToken+"-------");
-                android.util.Log.i("cjwsjy", "--------deviceToken2="+m_str_deviceToken+"-------");
+                //android.util.Log.i("cjwsjy", "--------deviceToken1="+deviceToken+"-------");
+                //android.util.Log.i("cjwsjy", "--------deviceToken2="+m_str_deviceToken+"-------");
             }
 
             @Override
             public void onFailure(String s, String s1)
             {
-                android.util.Log.i("cjwsjy", "--------error=1013------youMeng");
+                //android.util.Log.i("cjwsjy", "--------error=1013------youMeng");
 
             }
         });

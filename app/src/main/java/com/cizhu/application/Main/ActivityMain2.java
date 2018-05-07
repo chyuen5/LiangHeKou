@@ -76,6 +76,7 @@ public class ActivityMain2 extends Activity implements OnClickListener
     private String m_xiazai = "0";
     private String m_duban = "0";
     private String m_daiban = "0";
+    private String m_daiban_pingding = "0";
     
     @Override
     protected void onCreate(Bundle savedInstanceState) 
@@ -182,6 +183,7 @@ public class ActivityMain2 extends Activity implements OnClickListener
         FinishPeddingItem listItem2 = new FinishPeddingItem();
         listItem2.setIv_icon1(R.drawable.home_dangan22);
         listItem2.setTv_title("评定管理");
+        listItem2.setTv_date(m_daiban_pingding);
         listItems.add(listItem2);
 
         FinishPeddingItem listItem3 = new FinishPeddingItem();
@@ -195,12 +197,12 @@ public class ActivityMain2 extends Activity implements OnClickListener
         listItems.add(listItem4);
 
         FinishPeddingItem listItem5 = new FinishPeddingItem();
-        listItem5.setIv_icon1(R.drawable.home_dangan24);
+        listItem5.setIv_icon1(R.drawable.home_dangan25);
         listItem5.setTv_title("安全管理");
         listItems.add(listItem5);
 
         FinishPeddingItem listItem6 = new FinishPeddingItem();
-        listItem6.setIv_icon1(R.drawable.home_dangan24);
+        listItem6.setIv_icon1(R.drawable.home_dangan26);
         listItem6.setTv_title("BIM模型");
         listItems.add(listItem6);
 
@@ -610,7 +612,7 @@ public class ActivityMain2 extends Activity implements OnClickListener
         if(mark==100) listItemAdapter.updateItem(0,m_duban);
         if(mark==200) listItemAdapter.updateItem(0,m_daiban);
 
-        //if(mark==100) listItemAdapter.updateItem(0,"5");
+        if(mark==300) listItemAdapter.updateItem(1,m_daiban_pingding);
         //if(mark==200) listItemAdapter.updateItem(0,"5");
 
         //listItemAdapter.updateItem(2,m_daiban);
@@ -805,6 +807,36 @@ public class ActivityMain2 extends Activity implements OnClickListener
                 msg.what = 1;
                 handlers.sendMessage(msg);
 
+                //评定管理
+                url = appUrl+"/LHKAppServer/webQualityClear/getTaskNum/"+m_loginname;
+                resultStr = HttpClientUtil.HttpUrlConnectionGet(url, "UTF-8");
+                if(resultStr==null)
+                {
+                    strbuf = "网络连接失败，失败类型1013";
+                    msg = handlers.obtainMessage();
+                    msg.what = 1013;
+                    msg.obj = strbuf;
+                    handlers.sendMessage(msg);
+                }
+
+                length = resultStr.length();
+                if(length==0)
+                {
+                    strbuf = "网络连接失败，失败类型1014";
+                    msg = handlers.obtainMessage();
+                    msg.what = 1014;
+                    msg.obj = strbuf;
+                    handlers.sendMessage(msg);
+                }
+
+                //待办
+                jsonObj = new JSONObject(resultStr);
+                m_daiban_pingding = jsonObj.getString("TheNum");
+
+                msg = handlers.obtainMessage();
+                msg.what = 1025;
+                handlers.sendMessage(msg);
+
             }
             catch (JSONException e)
             {
@@ -877,32 +909,9 @@ public class ActivityMain2 extends Activity implements OnClickListener
                         text = msg.obj.toString();
                         Toast.makeText(activity, text,Toast.LENGTH_SHORT).show();
                         break;
-
-                    /*case 0:
-                        //必须升级
-                        upManager = new UpdateManager( activity, msg.obj.toString(),m_text );
-                        upManager.GetMainactivity(activity);
-                        upManager.checkUpdateInfo2();
+                    case 1025:
+                        activity.UpdateList(300);  //评定管理 待办
                         break;
-                    case 11:
-                        //选择升级
-                        upManager = new UpdateManager( activity, msg.obj.toString(),m_text );
-                        upManager.GetMainactivity(activity);
-                        upManager.checkUpdateInfo();
-                        break;
-                    case 2:
-                        //提示当前APP是最新版
-                        if(activity.m_sign==1) Toast.makeText( activity, "当前已经是最新版本", Toast.LENGTH_SHORT).show();
-                        break;
-                    case 3:
-                        //更新完成
-                        upManager = new UpdateManager( activity, msg.obj.toString(),m_text );
-                        upManager.checkUpdateInfo3();
-                        break;
-                    case 4:
-                        //更新通讯录
-                        activity.ShowDialogPhonebook();
-                        break;*/
                     default:
                         text = msg.obj.toString();
                         Toast.makeText(activity, text,Toast.LENGTH_SHORT).show();

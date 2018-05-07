@@ -179,28 +179,28 @@ public class Activity_AnQuan extends Activity implements OnClickListener
     public ListView initList_100()
     {
         FinishPeddingItem listItem1 = new FinishPeddingItem();
-        listItem1.setIv_icon1(R.drawable.home_dangan01);
+        listItem1.setIv_icon1(R.drawable.home_anquan01);
         listItem1.setTv_title("危险源识别与控制");
         //listItem1.setTv_date(m_duban);
         listItems.add(listItem1);
 
         FinishPeddingItem listItem2 = new FinishPeddingItem();
-        listItem2.setIv_icon1(R.drawable.home_dangan05);
+        listItem2.setIv_icon1(R.drawable.home_anquan02);
         listItem2.setTv_title("安全巡检");
         listItems.add(listItem2);
 
         FinishPeddingItem listItem3 = new FinishPeddingItem();
-        listItem3.setIv_icon1(R.drawable.home_dangan04);
+        listItem3.setIv_icon1(R.drawable.home_anquan03);
         listItem3.setTv_title("安全亮点");
         listItems.add(listItem3);
 
         FinishPeddingItem listItem4 = new FinishPeddingItem();
-        listItem4.setIv_icon1(R.drawable.home_dangan04);
+        listItem4.setIv_icon1(R.drawable.home_anquan04);
         listItem4.setTv_title("培训教育");
         listItems.add(listItem4);
 
         FinishPeddingItem listItem5 = new FinishPeddingItem();
-        listItem5.setIv_icon1(R.drawable.home_dangan04);
+        listItem5.setIv_icon1(R.drawable.home_anquan05);
         listItem5.setTv_title("现场交底");
         listItems.add(listItem5);
 
