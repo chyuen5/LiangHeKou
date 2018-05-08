@@ -708,5 +708,85 @@ public class HttpClientUtil
         
         return 1;
 	}
+
+    public static String HttpUrlConnectionPostLog(String urlPath, String params)
+    {
+        String strret = "";
+        OutputStream os = null;
+        InputStream is = null;
+        HttpURLConnection connection = null;
+        byte[] data = params.getBytes();
+
+        if (params == null || params.length() == 0)
+        {
+            return strret;
+        }
+
+        try
+        {
+            //获得URL对象
+            URL url = new URL(urlPath);
+            //获得HttpURLConnection对象
+            connection = (HttpURLConnection) url.openConnection();
+            // 设置请求方法为post
+            connection.setRequestMethod("POST");
+            //不使用缓存
+            connection.setUseCaches(false);
+            //设置超时时间
+            connection.setConnectTimeout(10*1000);
+            //设置读取超时时间
+            connection.setReadTimeout(10*1000);
+            //设置是否从httpUrlConnection读入，默认情况下是true;
+            connection.setDoInput(true);
+            //设置为true后才能写入参数
+            connection.setDoOutput(true);
+
+            connection.setRequestProperty("Content-Type", "application/json");
+            //connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            connection.setRequestProperty("Content-Length", String.valueOf(data.length));
+
+            os = connection.getOutputStream();
+            os.write(data);
+
+            //写入参数
+            if (connection.getResponseCode() == HttpURLConnection.HTTP_OK)
+            {
+                //相应码是否为200
+                is = connection.getInputStream();
+                //获得输入流
+                BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+                //包装字节流为字符流
+                StringBuilder response = new StringBuilder();
+                String line;
+                while ((line = reader.readLine()) != null)
+                {
+                    response.append(line);
+                }
+                return response.toString();
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            if (connection != null)
+            {
+                connection.disconnect();
+                connection = null;
+            }
+            if (is != null)
+            {
+                try {
+                    is.close();
+                    is = null;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return strret;
+    }
 	
 }

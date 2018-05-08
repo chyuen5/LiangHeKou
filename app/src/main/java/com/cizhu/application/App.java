@@ -3,6 +3,7 @@ package com.cizhu.application;
 import android.app.Application;
 import android.app.Notification;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
@@ -19,11 +20,15 @@ public class App extends Application
 
     private static Context mContext;
 
+    private SharedPreferences sp;
+
     @Override
     public void onCreate()
     {
         super.onCreate();
         mContext = getApplicationContext();
+
+        sp = getSharedPreferences("userdata", 0);
 
         //UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, "1fe6a20054bcef865eeb0991ee84525b");
         UMConfigure.init(this, "5adb001ff29d981f21000059", "Umeng", UMConfigure.DEVICE_TYPE_PHONE, "5152f5b388deeeac6e824a6583a414e1");
@@ -40,6 +45,10 @@ public class App extends Application
                 m_str_deviceToken = deviceToken;
                 //android.util.Log.i("cjwsjy", "--------deviceToken1="+deviceToken+"-------");
                 //android.util.Log.i("cjwsjy", "--------deviceToken2="+m_str_deviceToken+"-------");
+
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("deviceToken_id", m_str_deviceToken);
+                editor.commit();
             }
 
             @Override

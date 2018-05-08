@@ -43,6 +43,7 @@ import org.json.JSONObject;
 import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -70,7 +71,7 @@ public class ActivityMain2 extends Activity implements OnClickListener
     private int m_rolecode;
     private String m_loginname;
     private String m_diaplayname;
-    private String userId;
+    private String m_userid;
     private String appUrl;
     private String m_jieyue = "0";
     private String m_xiazai = "0";
@@ -93,7 +94,7 @@ public class ActivityMain2 extends Activity implements OnClickListener
         //获取用户登录名
 		sp = getSharedPreferences("userdata", 0);
         m_loginname =sp.getString("USERDATA.LOGIN.NAME", "");
-		userId = sp.getString("USERDATA.USER.ID", "");
+		m_userid = sp.getString("USERDATA.USER.ID", "");
         strrolecode = sp.getString("USERDATA.ROLE.CODE", "");
         m_diaplayname = sp.getString("USERDATA.DISPLAY.NAME", "");
         m_duban = sp.getString("USERDATA.DUBAN.NUM", "0");
@@ -168,6 +169,9 @@ public class ActivityMain2 extends Activity implements OnClickListener
         });
 
         initList_100();
+
+        Thread ThreadDevice = new Thread(new ThreadDeviceToken());
+        ThreadDevice.start();
 
     }
 
@@ -836,6 +840,85 @@ public class ActivityMain2 extends Activity implements OnClickListener
                 msg = handlers.obtainMessage();
                 msg.what = 1025;
                 handlers.sendMessage(msg);
+
+            }
+            catch (JSONException e)
+            {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+
+                msg = handlers.obtainMessage();
+                msg.what = 6;
+                handlers.sendMessage(msg);
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+                android.util.Log.d("cjwsjy", "------catch="+e.getLocalizedMessage()+"-------");
+
+                //异常错误
+                msg = handlers.obtainMessage();
+                msg.what = 6;
+                handlers.sendMessage(msg);
+            }
+        }
+    }
+
+    // 登录，验证用户密码
+    class ThreadDeviceToken implements Runnable
+    {
+        @Override
+        public void run()
+        {
+            int length = 0;
+            Message msg;
+
+            String str_deviceToken;
+            String str_appversion;
+            String url;
+            String jsonstr;
+            String str_machine;
+            String str_os;
+            String str_createDate;
+            JSONObject jsonObject;
+
+            jsonObject = new JSONObject();
+
+            str_appversion = sp.getString("curVersion", "1.0");
+            str_deviceToken = sp.getString("deviceToken_id", "1.0");
+
+
+            Calendar c = Calendar.getInstance();
+            int mYear = c.get(Calendar.YEAR); //获取当前年份
+            int mMonth = c.get(Calendar.MONTH)+1;//获取当前月份
+            int mDay = c.get(Calendar.DAY_OF_MONTH);//获取当前月份的日期号码
+
+            str_createDate = mYear+"-"+mMonth+"-"+mDay;
+
+            String model = Build.MODEL;//手机型号
+            String versionos = Build.VERSION.RELEASE;//Firmware/OS 版本号
+            str_os = "android-"+versionos;
+
+            //String model2 = model.replaceAll( " ", "%20");
+            str_machine = model.replaceAll( " ", "_");
+
+            try
+            {
+                jsonObject.put("userId", m_userid);
+                jsonObject.put("userName", m_loginname);
+                jsonObject.put("userDisplayName", m_diaplayname);
+                jsonObject.put("devicesId", str_deviceToken);
+                jsonObject.put("devicesType", "android");
+                jsonObject.put("createDate", str_createDate);
+                jsonObject.put("machine", str_machine);
+                jsonObject.put("os", str_os);
+                jsonObject.put("appversion", str_appversion);
+
+                jsonstr = jsonObject.toString();
+
+                url = appUrl+"/LHKAppServer/AppPushController/userDevices";
+
+                HttpClientUtil.HttpUrlConnectionPostLog(url, jsonstr);
 
             }
             catch (JSONException e)
