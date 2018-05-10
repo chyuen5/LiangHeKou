@@ -835,7 +835,7 @@ public class ActivityMain2 extends Activity implements OnClickListener
 
                 //待办
                 jsonObj = new JSONObject(resultStr);
-                m_daiban_pingding = jsonObj.getString("TheNum");
+                m_daiban_pingding = jsonObj.getString("todoNum");
 
                 msg = handlers.obtainMessage();
                 msg.what = 1025;
@@ -919,7 +919,6 @@ public class ActivityMain2 extends Activity implements OnClickListener
                 url = appUrl+"/LHKAppServer/AppPushController/userDevices";
 
                 HttpClientUtil.HttpUrlConnectionPostLog(url, jsonstr);
-
             }
             catch (JSONException e)
             {
