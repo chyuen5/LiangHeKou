@@ -43,6 +43,7 @@ import org.json.JSONObject;
 import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -70,12 +71,13 @@ public class ActivityMain2 extends Activity implements OnClickListener
     private int m_rolecode;
     private String m_loginname;
     private String m_diaplayname;
-    private String userId;
+    private String m_userid;
     private String appUrl;
     private String m_jieyue = "0";
     private String m_xiazai = "0";
     private String m_duban = "0";
     private String m_daiban = "0";
+    private String m_daiban_pingding = "0";
     
     @Override
     protected void onCreate(Bundle savedInstanceState) 
@@ -92,7 +94,7 @@ public class ActivityMain2 extends Activity implements OnClickListener
         //获取用户登录名
 		sp = getSharedPreferences("userdata", 0);
         m_loginname =sp.getString("USERDATA.LOGIN.NAME", "");
-		userId = sp.getString("USERDATA.USER.ID", "");
+		m_userid = sp.getString("USERDATA.USER.ID", "");
         strrolecode = sp.getString("USERDATA.ROLE.CODE", "");
         m_diaplayname = sp.getString("USERDATA.DISPLAY.NAME", "");
         m_duban = sp.getString("USERDATA.DUBAN.NUM", "0");
@@ -168,6 +170,9 @@ public class ActivityMain2 extends Activity implements OnClickListener
 
         initList_100();
 
+        Thread ThreadDevice = new Thread(new ThreadDeviceToken());
+        ThreadDevice.start();
+
     }
 
     //领导
@@ -182,6 +187,7 @@ public class ActivityMain2 extends Activity implements OnClickListener
         FinishPeddingItem listItem2 = new FinishPeddingItem();
         listItem2.setIv_icon1(R.drawable.home_dangan22);
         listItem2.setTv_title("评定管理");
+        listItem2.setTv_date(m_daiban_pingding);
         listItems.add(listItem2);
 
         FinishPeddingItem listItem3 = new FinishPeddingItem();
@@ -195,12 +201,12 @@ public class ActivityMain2 extends Activity implements OnClickListener
         listItems.add(listItem4);
 
         FinishPeddingItem listItem5 = new FinishPeddingItem();
-        listItem5.setIv_icon1(R.drawable.home_dangan24);
+        listItem5.setIv_icon1(R.drawable.home_dangan25);
         listItem5.setTv_title("安全管理");
         listItems.add(listItem5);
 
         FinishPeddingItem listItem6 = new FinishPeddingItem();
-        listItem6.setIv_icon1(R.drawable.home_dangan24);
+        listItem6.setIv_icon1(R.drawable.home_dangan26);
         listItem6.setTv_title("BIM模型");
         listItems.add(listItem6);
 
@@ -610,7 +616,7 @@ public class ActivityMain2 extends Activity implements OnClickListener
         if(mark==100) listItemAdapter.updateItem(0,m_duban);
         if(mark==200) listItemAdapter.updateItem(0,m_daiban);
 
-        //if(mark==100) listItemAdapter.updateItem(0,"5");
+        if(mark==300) listItemAdapter.updateItem(1,m_daiban_pingding);
         //if(mark==200) listItemAdapter.updateItem(0,"5");
 
         //listItemAdapter.updateItem(2,m_daiban);
@@ -805,6 +811,114 @@ public class ActivityMain2 extends Activity implements OnClickListener
                 msg.what = 1;
                 handlers.sendMessage(msg);
 
+                //评定管理
+                url = appUrl+"/LHKAppServer/webQualityClear/getTaskNum/"+m_loginname;
+                resultStr = HttpClientUtil.HttpUrlConnectionGet(url, "UTF-8");
+                if(resultStr==null)
+                {
+                    strbuf = "网络连接失败，失败类型1013";
+                    msg = handlers.obtainMessage();
+                    msg.what = 1013;
+                    msg.obj = strbuf;
+                    handlers.sendMessage(msg);
+                }
+
+                length = resultStr.length();
+                if(length==0)
+                {
+                    strbuf = "网络连接失败，失败类型1014";
+                    msg = handlers.obtainMessage();
+                    msg.what = 1014;
+                    msg.obj = strbuf;
+                    handlers.sendMessage(msg);
+                }
+
+                //待办
+                jsonObj = new JSONObject(resultStr);
+                m_daiban_pingding = jsonObj.getString("todoNum");
+
+                msg = handlers.obtainMessage();
+                msg.what = 1025;
+                handlers.sendMessage(msg);
+
+            }
+            catch (JSONException e)
+            {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+
+                msg = handlers.obtainMessage();
+                msg.what = 6;
+                handlers.sendMessage(msg);
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+                android.util.Log.d("cjwsjy", "------catch="+e.getLocalizedMessage()+"-------");
+
+                //异常错误
+                msg = handlers.obtainMessage();
+                msg.what = 6;
+                handlers.sendMessage(msg);
+            }
+        }
+    }
+
+    // 登录，验证用户密码
+    class ThreadDeviceToken implements Runnable
+    {
+        @Override
+        public void run()
+        {
+            int length = 0;
+            Message msg;
+
+            String str_deviceToken;
+            String str_appversion;
+            String url;
+            String jsonstr;
+            String str_machine;
+            String str_os;
+            String str_createDate;
+            JSONObject jsonObject;
+
+            jsonObject = new JSONObject();
+
+            str_appversion = sp.getString("curVersion", "1.0");
+            str_deviceToken = sp.getString("deviceToken_id", "1.0");
+
+
+            Calendar c = Calendar.getInstance();
+            int mYear = c.get(Calendar.YEAR); //获取当前年份
+            int mMonth = c.get(Calendar.MONTH)+1;//获取当前月份
+            int mDay = c.get(Calendar.DAY_OF_MONTH);//获取当前月份的日期号码
+
+            str_createDate = mYear+"-"+mMonth+"-"+mDay;
+
+            String model = Build.MODEL;//手机型号
+            String versionos = Build.VERSION.RELEASE;//Firmware/OS 版本号
+            str_os = "android-"+versionos;
+
+            //String model2 = model.replaceAll( " ", "%20");
+            str_machine = model.replaceAll( " ", "_");
+
+            try
+            {
+                jsonObject.put("userId", m_userid);
+                jsonObject.put("userName", m_loginname);
+                jsonObject.put("userDisplayName", m_diaplayname);
+                jsonObject.put("devicesId", str_deviceToken);
+                jsonObject.put("devicesType", "android");
+                jsonObject.put("createDate", str_createDate);
+                jsonObject.put("machine", str_machine);
+                jsonObject.put("os", str_os);
+                jsonObject.put("appversion", str_appversion);
+
+                jsonstr = jsonObject.toString();
+
+                url = appUrl+"/LHKAppServer/AppPushController/userDevices";
+
+                HttpClientUtil.HttpUrlConnectionPostLog(url, jsonstr);
             }
             catch (JSONException e)
             {
@@ -877,32 +991,9 @@ public class ActivityMain2 extends Activity implements OnClickListener
                         text = msg.obj.toString();
                         Toast.makeText(activity, text,Toast.LENGTH_SHORT).show();
                         break;
-
-                    /*case 0:
-                        //必须升级
-                        upManager = new UpdateManager( activity, msg.obj.toString(),m_text );
-                        upManager.GetMainactivity(activity);
-                        upManager.checkUpdateInfo2();
+                    case 1025:
+                        activity.UpdateList(300);  //评定管理 待办
                         break;
-                    case 11:
-                        //选择升级
-                        upManager = new UpdateManager( activity, msg.obj.toString(),m_text );
-                        upManager.GetMainactivity(activity);
-                        upManager.checkUpdateInfo();
-                        break;
-                    case 2:
-                        //提示当前APP是最新版
-                        if(activity.m_sign==1) Toast.makeText( activity, "当前已经是最新版本", Toast.LENGTH_SHORT).show();
-                        break;
-                    case 3:
-                        //更新完成
-                        upManager = new UpdateManager( activity, msg.obj.toString(),m_text );
-                        upManager.checkUpdateInfo3();
-                        break;
-                    case 4:
-                        //更新通讯录
-                        activity.ShowDialogPhonebook();
-                        break;*/
                     default:
                         text = msg.obj.toString();
                         Toast.makeText(activity, text,Toast.LENGTH_SHORT).show();
