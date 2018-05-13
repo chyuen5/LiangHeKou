@@ -41,4 +41,6 @@ dependencies {
     implementation 'com.umeng.sdk:utdid:1.1.5.3'
     //PushSDK
     implementation 'com.umeng.sdk:push:4.1.0'
+    //华为Push通道
+    implementation 'com.umeng.sdk:push-huawei:1.0.0'
 }

@@ -13,6 +13,8 @@ import com.umeng.message.UmengMessageHandler;
 import com.umeng.message.UmengNotificationClickHandler;
 import com.umeng.message.entity.UMessage;
 
+import org.android.agoo.huawei.HuaWeiRegister;
+
 public class App extends Application
 {
     private static String m_str_deviceToken;
@@ -29,6 +31,8 @@ public class App extends Application
         UMConfigure.init(this, "5adb001ff29d981f21000059", "Umeng", UMConfigure.DEVICE_TYPE_PHONE, "5152f5b388deeeac6e824a6583a414e1");
 
         PushAgent mPushAgent = PushAgent.getInstance(this);
+
+        HuaWeiRegister.register(this);
 
         //注册推送服务，每次调用register方法都会回调该接口
         mPushAgent.register(new IUmengRegisterCallback()
