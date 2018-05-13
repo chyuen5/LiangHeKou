@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.cizhu.application"
         minSdkVersion 17
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName '1.1'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -34,7 +34,6 @@ dependencies {
     implementation files('libs/fastjson-1.1.27-android.jar')
     implementation files('libs/qysdk.jar')
     implementation files('libs/nineoldandroids-2.4.0.jar')
-
     //PushSDK必须依赖基础组件库，所以需要加入对应依赖
     implementation 'com.umeng.sdk:common:1.5.0'
     //PushSDK必须依赖utdid库，所以需要加入对应依赖
